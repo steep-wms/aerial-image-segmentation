@@ -19,7 +19,7 @@ jobs:
 
     permissions:
       contents: read
-      packages: read|write
+      packages: write
 
     steps:
       - uses: actions/checkout@v3
@@ -53,5 +53,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ github.repository }}/${{ matrix.service }}:latest
+          cache-from: type=registry,ref=gcr.io/${{ github.repository }}/${{ matrix.service }}:latest
           cache-to: type=inline
