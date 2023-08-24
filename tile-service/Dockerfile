@@ -4,4 +4,4 @@ COPY . /tile-service
 WORKDIR /tile-service
 RUN npm ci
 
-ENTRYPOINT "./tile.js"
+ENTRYPOINT ["node", "./tile.js"]
