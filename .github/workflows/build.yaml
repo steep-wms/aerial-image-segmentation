@@ -37,6 +37,10 @@ jobs:
         with:
           flavor: |
             latest=auto
+          tags: |
+            type=ref,event=branch,enable=true
+            type=ref,event=tag,enable=true
+            type=raw,value=latest,enable={{ is_default_branch }}
           images: ${{ env.REGISTRY }}/${{ github.repository }}/${{ matrix.service }}
 
       - name: Build and push Docker image
