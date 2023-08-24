@@ -10,4 +10,4 @@ COPY . /segment-service
 WORKDIR /segment-service
 RUN pip install -r requirements.txt
 
-ENTRYPOINT "./segment.py"
+ENTRYPOINT ["python", "./segment.py"]
