@@ -9,10 +9,11 @@ env:
 
 jobs:
   build:
-    matrix:
-      service:
-        - tile-service
-        - segment-service
+    strategy:
+      matrix:
+        service:
+          - tile-service
+          - segment-service
 
     runs-on: ubuntu-latest
 
