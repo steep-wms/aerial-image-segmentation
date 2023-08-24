@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:20-slim
 
 COPY . /tile-service
 WORKDIR /tile-service
