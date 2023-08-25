@@ -1,7 +1,7 @@
 - id: tile
   name: Tiling
   description: Split an image into tiles
-  path: ghcr.io/steep-wms/segment-aerial-images/tile-service:latest
+  path: ghcr.io/steep-wms/segment-aerial-images/tile-service:1.0.0
   runtime: docker
 
   parameters:
@@ -31,7 +31,7 @@
 - id: segment-geospatial
   name: Segment Geospatial
   description: Segment geospatial data with the Segment Anything Model (SAM)
-  path: ghcr.io/steep-wms/segment-aerial-images/segment-service:latest
+  path: ghcr.io/steep-wms/segment-aerial-images/segment-service:1.0.0
   runtime: docker
 
   parameters:
