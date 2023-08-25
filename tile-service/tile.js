@@ -26,4 +26,7 @@ async function tile() {
   }
 }
 
-tile().catch(console.error)
+tile().catch(e => {
+  console.error(e)
+  process.exit(1)
+})
