@@ -50,5 +50,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/${{ matrix.service }}:main
           cache-to: type=inline
