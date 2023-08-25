@@ -1,0 +1,59 @@
+- id: tile
+  name: Tiling
+  description: Split an image into tiles
+  path: ghcr.io/steep-wms/segment-aerial-images/tile-service:latest
+  runtime: docker
+
+  parameters:
+    - id: input_file
+      name: Input image
+      description: The input image to tile
+      type: input
+      cardinality: 1..1
+      dataType: string
+
+    - id: output_directory
+      name: Output directory
+      description: The directory where the tiles should be stored
+      type: output
+      cardinality: 1..1
+      dataType: directory
+    
+    - id: num_tiles
+      name: Number of columns/rows
+      description: >-
+        The number of columns and rows to split the image into. A value of
+        5 means the image will be split into 5x5 tiles.
+      type: input
+      cardinality: 1..1
+      dataType: string
+
+- id: segment-geospatial
+  name: Segment Geospatial
+  description: Segment geospatial data with the Segment Anything Model (SAM)
+  path: ghcr.io/steep-wms/segment-aerial-images/segment-service:latest
+  runtime: docker
+
+  parameters:
+    - id: input_file
+      name: Input image
+      description: The input image to segment
+      type: input
+      cardinality: 1..1
+      dataType: string
+
+    - id: output_file
+      name: Output image
+      description: Output image with masks
+      type: output
+      cardinality: 1..1
+      dataType: string
+      fileSuffix: .jpg
+
+  # Uncomment this to enable GPU support:
+  # runtimeArgs:
+  #   - id: gpus
+  #     name: GPUs
+  #     description: "Use all available GPUs"
+  #     label: "--gpus"
+  #     value: "all"
