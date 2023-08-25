@@ -55,3 +55,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest
           cache-to: type=inline
+
+      - name: Remove untagged container images
+        uses: actions/delete-package-versions@v4
+        with:
+          package-name: segment-aerial-images/${{ matrix.service }}
+          package-type: container
+          delete-only-untagged-versions: true
+          min-versions-to-keep: 0
