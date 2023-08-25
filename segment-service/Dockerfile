@@ -1,6 +1,6 @@
 FROM python:3-slim
 
-ADD https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth /segment-service/sam_vit_h_4b8939.pth
+ADD https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth /segment-service/sam_vit_b_01ec64.pth
 
 RUN apt update && \
     apt install -y libgl1 libglib2.0-0 && \
