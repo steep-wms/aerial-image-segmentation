@@ -54,9 +54,10 @@ jobs:
           cache-to: type=inline
 
       - name: Remove untagged container images
-        uses: actions/delete-package-versions@v4
+        uses: snok/container-retention-policy@v2
         with:
-          package-name: segment-aerial-images/${{ matrix.service }}
-          package-type: container
-          delete-only-untagged-versions: true
-          min-versions-to-keep: 0
+          image-names: segment-aerial-images/${{ matrix.service }}
+          cut-off: A hour ago UTC
+          account-type: personal
+          untagged-only: true
+          token: ${{ secrets.GITHUB_TOKEN }}
