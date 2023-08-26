@@ -14,8 +14,8 @@ jobs:
     strategy:
       matrix:
         service:
-          - tile-service
-          - segment-service
+          - tiling-service
+          - segmentation-service
 
     runs-on: ubuntu-latest
 
@@ -63,7 +63,7 @@ jobs:
       - name: Remove untagged container images
         uses: actions/delete-package-versions@v4
         with:
-          package-name: segment-aerial-images/${{ matrix.service }}
+          package-name: aerial-image-segmentation/${{ matrix.service }}
           package-type: container
           delete-only-untagged-versions: true
           min-versions-to-keep: 0

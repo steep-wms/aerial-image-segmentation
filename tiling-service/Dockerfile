@@ -1,7 +1,7 @@
 FROM node:18-slim
 
-COPY . /tile-service
-WORKDIR /tile-service
+COPY . /tiling-service
+WORKDIR /tiling-service
 RUN npm ci
 
 ENTRYPOINT ["node", "./tile.js"]

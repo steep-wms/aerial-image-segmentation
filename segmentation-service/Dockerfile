@@ -1,13 +1,13 @@
 FROM python:3-slim
 
-ADD https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth /segment-service/sam_vit_b_01ec64.pth
+ADD https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth /segmentation-service/sam_vit_b_01ec64.pth
 
 RUN apt update && \
     apt install -y libgl1 libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*
 
-COPY . /segment-service
-WORKDIR /segment-service
+COPY . /segmentation-service
+WORKDIR /segmentation-service
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ["python", "./segment.py"]

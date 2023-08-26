@@ -1,8 +1,8 @@
-# Segment aerial images tutorial
+# Aerial image segmentation tutorial
 
-This is the source code accompanying the Steep tutorial on segmenting aerial images:
+This is the source code accompanying the Steep tutorial on semantic segmentation of aerial images:
 
-https://steep-wms.github.io/docs/segment-aerial-images/
+https://steep-wms.github.io/docs/aerial-image-segmentation/
 
 ## Contents
 
@@ -12,7 +12,7 @@ Contains an aerial image that can be used as input for the workflow from this tu
 
 The image has been downloaded from https://gds.hessen.de. The data is provided by the [Hessische Verwaltung für Bodenmanagement und Geoinformation](https://hvbg.hessen.de/). It is free and can be used for any purpose.
 
-### `segment-service/`
+### `segmentation-service/`
 
 An image segmentation service based on [Segment Anything](https://segment-anything.com/) and [segment-geospatial](https://samgeo.gishub.org/samgeo/).
 
@@ -24,7 +24,7 @@ Usage:
 
 Configuration files needed to run the image segmentation workflow.
 
-### `tile-service/`
+### `tiling-service/`
 
 A tiling service that splits an image into smaller tiles.
 
